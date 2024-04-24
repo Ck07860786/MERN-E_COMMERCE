@@ -12,7 +12,7 @@ function Categories() {
       <div className=" text-center mt-5">
         <h1 className=" text-3xl">All Categories</h1>
       </div>
-      <div className=" flex grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8  ">
+      <div className="  grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8  ">
         {categories?.map((c) => (
           <div className=" flex m-24 ">
 
