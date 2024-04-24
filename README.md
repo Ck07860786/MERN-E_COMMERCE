@@ -2,8 +2,7 @@
 
 This is an E-commerce application with Admin panel where admin can create product with category, update product and delete product. By this project i leaned lot of concepts like how crud operations are perforned and how states are managed, context api etc. 
 
-### Demo : https://mern-e-commerce-client-five.vercel.app/
-# Screenshots
+
 ## Main Screen
 ![m1](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/04472365-b083-4d6d-9b58-e9a64ecf957b)
 ## Home page
