@@ -124,7 +124,7 @@ function Header() {
                   {
                     !auth.user ? (<>
                       <Button className=' bg-black text-white'><Link to='/login'>Login</Link></Button>
-                  <p><Button className=' bg-black text-white' to='/register'>Register</Button></p>
+                  <p><Button className=' bg-black text-white' ><Link to='/register'>Register</Link></Button></p>
                     </>) :(<>
                       <Menu as="div" className="relative inline-block text-left">
       <div>
