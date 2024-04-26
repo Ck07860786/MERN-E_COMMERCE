@@ -31,7 +31,7 @@ function Home() {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/category/get-category"
+        "https://mern-e-commerce-server-orcin.vercel.app/api/v1/category/get-category"
       );
       if (data.success) {
         setCategories(data.category);
