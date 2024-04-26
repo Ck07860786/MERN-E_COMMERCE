@@ -15,7 +15,7 @@ function Home() {
     const getALlProducts = async () => {
       try {
         const { data } = await axios.get(
-          "https://mern-e-commerce-server-orcin.vercel.app//api/v1/product/get-product"
+          "https://mern-e-commerce-server-orcin.vercel.app/api/v1/product/get-product"
         );
         setProducts(data.product);
         console.log("products:",data.product);
