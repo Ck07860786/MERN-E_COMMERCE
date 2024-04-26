@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "proxy": "https://mern-e-commerce-server-orcin.vercel.app",
+  "proxy": "http://localhost:8080",
   "private": true,
   "version": "0.0.0",
   "type": "module",
