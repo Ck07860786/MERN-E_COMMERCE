@@ -20,9 +20,7 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 //rest  api
-app.use('/',(req,res)=>{
-    res.send('<h1>Hello Welcome to E-commerce</h1>')
-})
+
 app.use('/api/v1/auth',authRoutes)
 app.use('/api/v1/category',categoryRoutes)
 app.use('/api/v1/product',productRoutes)
