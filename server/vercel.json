@@ -1,5 +1,5 @@
 {
-  { "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "./index.js" }] }
+  { "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/index.js" }] }
 
 }
 
