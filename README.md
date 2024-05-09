@@ -1,24 +1,33 @@
-# E-commerce with admin 🛍️
+# PartyPlanner
 
-This is an E-commerce application with Admin panel where admin can create product with category, update product and delete product. By this project i leaned lot of concepts like how crud operations are perforned and how states are managed, context api etc. 
+Your ultimate event planning solution! Connect with trusted service providers, make informed decisions with transparent ratings, and streamline booking effortlessly. Revolutionize your event planning experience with EventEase today. 
 
 
 ## Main Screen
-![m1](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/04472365-b083-4d6d-9b58-e9a64ecf957b)
+![PP1](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/525feedd-f045-433d-b295-6de788871237)
+
 ## Home page
-![m2](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/5fd533d7-31bf-4bca-9562-08315a7420b7)
+![PP4](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/a9099f8e-2060-448d-beb3-45810e8ff2cb)
 
-## Admin page
-![m3](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/9c388f15-207c-4b00-88f3-72bcb0b25b6d)
+# Service Deatil
+![PP7](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/2766078b-8eb4-4bfe-84e1-b6b7b9ba8877)
 
-## Shopping Cart
-![m4](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/611aee16-7cd2-464e-87fa-cdb0653e7aae)
+## Signup Page
+![PP3](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/2779d7fe-dfe9-401f-8890-961537001068)
+
+
+## Admin pannel
+![PP8](https://github.com/Ck07860786/MERN-E_COMMERCE/assets/115991360/9c21a3de-a15a-4cec-88d0-02b1e48d6133)
+
+
 
 ### Tech Stack 🚀
 - React js
 - Talwind CSS
 - Node js
 - Express js
+- Cloudinary
+- Ant Design
 - Mongo Db(for database)
   
 ### NOTE ⚠ : 
