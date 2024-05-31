@@ -4,6 +4,7 @@ import { useCart } from '../context/Cart'
 import { useAuth } from '../context/auth'
 import Item from 'antd/es/list/Item'
 import { toast } from 'react-toastify'
+import { BASE_URL } from '../Helper'
 
 function MyCart() {
     const [cart, setCart] =  useCart()
@@ -52,7 +53,7 @@ function MyCart() {
                             <li className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                     <img
-                                        src={`http://localhost:8080/api/v1/product/product-image/${p._id}`}
+                                        src={`${BASE_URL}/api/v1/product/product-image/${p._id}`}
                                         alt={p.name}
                                         className="h-full w-full object-cover object-center"
                                     />

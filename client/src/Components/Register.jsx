@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import User from '../Images/User.png'
+import { BASE_URL } from "../Helper";
 
 function Register() {
   const [name, setName] = useState("");
@@ -16,7 +17,7 @@ function Register() {
     e.preventDefault();
     try {
       const response = await axios
-        .post("http://localhost:8080/api/v1/auth/register", {
+        .post(`${BASE_URL}/api/v1/auth/register`, {
           name,
           email,
           phone,

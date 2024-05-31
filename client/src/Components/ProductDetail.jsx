@@ -5,6 +5,7 @@ import axios from "axios";
 import { useParams } from "react-router";
 import { Select } from "antd";
 import { useCart } from "../context/Cart";
+import { BASE_URL } from "../Helper";
 
 function ProductDetail() {
   const [product, setProduct] = useState({});
@@ -15,7 +16,7 @@ function ProductDetail() {
   const getProductDetail = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/get-product/${params.slug}`
+        `${BASE_URL}/api/v1/product/get-product/${params.slug}`
       );
       setProduct(data?.product);
     } catch (error) {
@@ -37,7 +38,7 @@ function ProductDetail() {
       <div className="flex mt-20">
         <div className="shadow-lg w-[400px] ml-40">
           <img
-            src={`http://localhost:8080/api/v1/product/product-image/${product._id}`}
+            src={`${BASE_URL}/api/v1/product/product-image/${product._id}`}
             alt={product.name}
             className="object-cover object-center w-full h-full"
           />

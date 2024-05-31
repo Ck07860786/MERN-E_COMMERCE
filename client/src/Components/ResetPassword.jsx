@@ -4,6 +4,7 @@ import { Link,NavLink,useNavigate } from 'react-router-dom'
 import {toast} from 'react-toastify'
 import { useAuth } from '../context/auth'
 import Header from '../Layouts/Header'
+import { BASE_URL } from '../Helper'
 
 function ResetPassword() {
     const [email,setEmail] = useState("")
@@ -17,7 +18,7 @@ function ResetPassword() {
         e.preventDefault()
         try {
          
-          const response = await axios.post('http://localhost:8080/api/v1/auth/forgot-password',{
+          const response = await axios.post(`${BASE_URL}/api/v1/auth/forgot-password`,{
             email,
             newPassword,
             answer,

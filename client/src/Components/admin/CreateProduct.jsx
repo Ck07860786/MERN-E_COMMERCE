@@ -5,6 +5,7 @@ import AdminMenu from './AdminMenu'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import {Select} from 'antd'
+import { BASE_URL } from '../../Helper'
 const {Option} = Select
 
 function CreateProduct() {
@@ -24,7 +25,7 @@ function CreateProduct() {
     try {
       
       
-      const {data} = await axios.get('http://localhost:8080/api/v1/category/get-category',)
+      const {data} = await axios.get(`${BASE_URL}/api/v1/category/get-category`,)
       if(data?.success){
         setCategories(data?.category)
         console.log(data?.category)
@@ -51,7 +52,7 @@ function CreateProduct() {
       productData.append("image", image)
       productData.append("category", category)
 
-      const {data} = await axios.post('http://localhost:8080/api/v1/product/create-product',productData)
+      const {data} = await axios.post(`${BASE_URL}/api/v1/product/create-product`,productData)
       if(data.success){
         toast.success(data.message)
         navigate('/dashboard/admin/products')

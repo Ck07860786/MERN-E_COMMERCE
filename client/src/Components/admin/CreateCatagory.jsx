@@ -5,6 +5,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 import AddCategoryform from '../All Form/AddCategoryform'
 import {Modal} from 'antd'
+import { BASE_URL } from '../../Helper'
 
 
 function CreateCatagory() {
@@ -16,7 +17,7 @@ function CreateCatagory() {
   const handleSubmit = async(e)=>{
       e.preventDefault()
       try {
-        const {data}= await axios.post('http://localhost:8080/api/v1/category/create-category',{name})
+        const {data}= await axios.post(`${BASE_URL}/api/v1/category/create-category`,{name})
         if(data.success){
           toast.success(`${name} category is created`)
           getAllCategory();
@@ -33,7 +34,7 @@ function CreateCatagory() {
   const handleUpdate = async(e)=>{
     e.preventDefault()
     try {
-      const {data} = await axios.put(`http://localhost:8080/api/v1/category/update-category/${selected._id}`,{name:updatedName})
+      const {data} = await axios.put(`${BASE_URL}/api/v1/category/update-category/${selected._id}`,{name:updatedName})
       if(data.success){
         toast.success(data.message)
         getAllCategory();
@@ -55,7 +56,7 @@ function CreateCatagory() {
   const handleDelete = async(id)=>{
     
     try {
-      const {data} = await axios.delete(`http://localhost:8080/api/v1/category/delete-category/${id}`)
+      const {data} = await axios.delete(`${BASE_URL}/api/v1/category/delete-category/${id}`)
       if(data.success){
         toast.success(data.message)
         getAllCategory();
@@ -73,7 +74,7 @@ function CreateCatagory() {
 
   const getAllCategory= async()=>{
     try {
-      const {data} = await axios.get('http://localhost:8080/api/v1/category/get-category')
+      const {data} = await axios.get(`${BASE_URL}/api/v1/category/get-category`)
       if(data.success){
         setCategories(data.category)
         console.log(data.category)

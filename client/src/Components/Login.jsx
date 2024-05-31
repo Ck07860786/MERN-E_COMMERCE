@@ -3,8 +3,8 @@ import axios from 'axios'
 import { Link,NavLink,useNavigate } from 'react-router-dom'
 import {toast} from 'react-toastify'
 import { useAuth } from '../context/auth'
-import Header from '../Layouts/Header'
 import User from '../Images/User.png'
+import { BASE_URL } from '../Helper'
 function Login() {
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
@@ -16,7 +16,7 @@ function Login() {
     e.preventDefault()
     try {
      
-      const response = await axios.post('http://localhost:8080/api/v1/auth/login',{email,password}).then(response=>{
+      const response = await axios.post(`${BASE_URL}/api/v1/auth/login`,{email,password}).then(response=>{
         
         if(response.data.success){
           toast.success(response.data.message)

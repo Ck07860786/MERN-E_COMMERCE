@@ -5,6 +5,7 @@ import AdminMenu from "./AdminMenu";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Select } from "antd";
+import { BASE_URL } from "../../Helper";
 const { Option } = Select;
 
 function UpdateProduct() {
@@ -25,7 +26,7 @@ function UpdateProduct() {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/get-product/${params.slug}`
+        `${BASE_URL}/api/v1/product/get-product/${params.slug}`
       );
       setId(data.product._id);
       setName(data.product.name);
@@ -45,7 +46,7 @@ function UpdateProduct() {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/category/get-category"
+        `${BASE_URL}/api/v1/category/get-category`
       );
       if (data?.success) {
         setCategories(data?.category);
@@ -64,7 +65,7 @@ function UpdateProduct() {
   const handleDelete = async () => {
     try {
        
-      const {data} = await axios.delete(`http://localhost:8080/api/v1/product/delete-product/${id}`)
+      const {data} = await axios.delete(`${BASE_URL}/api/v1/product/delete-product/${id}`)
       toast.success(data.message)
       navigate('/dashboard/admin/products')
 
@@ -87,7 +88,7 @@ function UpdateProduct() {
       productData.append("category", category);
 
       const { data } = await axios.put(
-        `http://localhost:8080/api/v1/product/update-product/${id}`,
+        `${BASE_URL}/api/v1/product/update-product/${id}`,
         productData
       );
       if (data.success) {
@@ -115,7 +116,7 @@ function UpdateProduct() {
               className=" columns-md text-black"
               placeholder="Select Category"
               size="large"
-              S
+              
               showSearch
               onChange={(value) => {
                 setCategory(value);
@@ -157,7 +158,7 @@ function UpdateProduct() {
               ) : (
                 <div className=" text-center">
                   <img
-                    src={`http://localhost:8080/api/v1/product/product-image/${id}`}
+                    src={`${BASE_URL}/api/v1/product/product-image/${id}`}
                     alt="product image"
                     width={"200px"}
                   />

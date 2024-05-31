@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../Layouts/Header'
 import { useSearch } from '../context/SerchContext'
 import { Link } from 'react-router-dom'
+import { BASE_URL } from '../Helper'
 
 
 function Serach() {
@@ -24,7 +25,7 @@ function Serach() {
                       <div className="group relative">
                         <div className="aspect-h-1 aspect-w-1 w-full p-5 rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                           <img
-                            src={`http://localhost:8080/api/v1/product/product-image/${p._id}`}
+                            src={`${BASE_URL}/api/v1/product/product-image/${p._id}`}
                             alt={p.name}
                             className="object-cover object-center w-[200px] h-full"
                           />

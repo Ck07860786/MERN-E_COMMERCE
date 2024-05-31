@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { useAuth } from "../../context/auth";
 import profile from './adminImages/Profile.png'
 import AdminMenu from "./AdminMenu";
+import { BASE_URL } from "../../Helper";
 
 function Profile() {
   const [name, setName] = useState("");
@@ -24,7 +25,7 @@ function Profile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/api/v1/auth/register", {
+      const response = await axios.post(`${BASE_URL}/api/v1/auth/register`, {
         name,
         email,
         phone,

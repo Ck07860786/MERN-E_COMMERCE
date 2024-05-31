@@ -30,7 +30,7 @@ app.use('/api/v1/product',productRoutes)
 
 
 //port listen 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 8080
 
 app.listen(PORT,()=>{
     console.log(`server is running on ${PORT}`)

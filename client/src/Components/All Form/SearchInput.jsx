@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSearch } from '../../context/SerchContext'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+import { BASE_URL } from '../../Helper'
 
 
 function SearchInput() {
@@ -13,7 +14,7 @@ function SearchInput() {
     const handleClick = async(e)=>{
         e.preventDefault()
         try {
-            const {data} = await axios.get(`http://localhost:8080/api/v1/product/search/${values.keyword}`)
+            const {data} = await axios.get(`${BASE_URL}/api/v1/product/search/${values.keyword}`)
             setValues({...values ,result:data})
             navigate('/search')
             

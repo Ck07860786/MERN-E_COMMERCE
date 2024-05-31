@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/Cart";
 import { toast } from "react-toastify";
+import { BASE_URL } from "../Helper";
 
 
 function Home() {
@@ -15,7 +16,7 @@ function Home() {
     const getALlProducts = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:8080/api/v1/product/get-product"
+          `${BASE_URL}/api/v1/product/get-product`
         );
         setProducts(data.product);
         console.log("products:",data.product);
@@ -31,7 +32,7 @@ function Home() {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/category/get-category"
+        `${BASE_URL}/api/v1/category/get-category`
       );
       if (data.success) {
         setCategories(data.category);
@@ -61,7 +62,7 @@ function Home() {
                       <div className="group relative">
                         <div className="aspect-h-1 aspect-w-1 w-full p-5 rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                           <img
-                            src={`http://localhost:8080/api/v1/product/product-image/${p._id}`}
+                            src={`${BASE_URL}/api/v1/product/product-image/${p._id}`}
                             alt={p.name}
                             className="object-cover object-center w-[200px] h-full"
                           />
