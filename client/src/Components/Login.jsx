@@ -27,6 +27,8 @@ function Login() {
           });
           localStorage.setItem('auth', JSON.stringify(response.data))
           navigate('/home')
+          console.log('JWT_SECRETKEY:', process.env.JWT_SECRETKEY);
+
         }
         else{
           toast.error(response.data.message)
@@ -127,3 +129,6 @@ function Login() {
 }
 
 export default Login
+
+
+

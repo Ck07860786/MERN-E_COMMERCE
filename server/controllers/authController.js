@@ -78,63 +78,57 @@ import userModel from "../models/userModel.js";
 
 //login 
 
-export const loginController =async(req,res)=>{
-
-
+export const loginController = async (req, res) => {
     try {
-        const {email,password}= req.body
-        
-        
-        if(!email || !password){
-            return res.send({
-                success:false,
-                message:'incorrect email or password'
-            })
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).send({
+                success: false,
+                message: 'Email and password are required'
+            });
         }
 
-        const user = await userModel.findOne({email})
-        if(!user){
+        const user = await userModel.findOne({ email });
+        if (!user) {
             return res.status(404).send({
-                success:false,
-                message:'email not register'
-            })
+                success: false,
+                message: 'Email not registered'
+            });
         }
 
-        const match = await comparePassword(password,user.password)
-        if(!match){
-            return res.status(200).send({
-                success:false,
-                message:'invalid password'
-            })
+        const match = await comparePassword(password, user.password);
+        if (!match) {
+            return res.status(401).send({
+                success: false,
+                message: 'Invalid password'
+            });
         }
-        
-        const token = await JWT.sign({_id:user._id}, process.env.JWT_SECRETKEY,{
-            expiresIn:"1d"
-        })
+
+        const token = JWT.sign({ _id: user._id }, process.env.JWT_SECRETKEY, {
+            expiresIn: "1d"
+        });
 
         res.status(200).send({
-            success:true,
-            message:'Login successfully',
-            user:{
-                name:user.name,
-                email:user.email,
-                phone:user.phone,
-                role:user.role,
+            success: true,
+            message: 'Login successful',
+            user: {
+                name: user.name,
+                email: user.email,
+                phone: user.phone,
+                role: user.role,
             },
             token
-            
-         })
+        });
     } catch (error) {
-        
-        console.log(error)
+        console.error('Error during login:', error);  
         res.status(500).send({
-            success:false,
-            message:'error in login',
-            error,
-        })
-        
+            success: false,
+            message: 'Error in login',
+            error: error.message  
+        });
     }
-}
+};
 
 //forget pasword
 
@@ -189,4 +183,6 @@ export const forgotPasswordController= async(req,res)=>{
         
     }
 }
+
+
 
